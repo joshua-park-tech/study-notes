@@ -1,18 +1,11 @@
 from appjar import gui
 
+
 def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
 
 def notebook():
-    app.setSize(600, 400)
-    # app.setFont(21)
-    # app.addLabelScale("scale")
-    # app.setScale("scale", 50)
-    # app.addButton("scale confirm life", confirm)
-    # app.go()
-    #app.hide("")
-
     app.setTtkTheme("clam")
     app.startNotebook("Notebook")
 
@@ -23,7 +16,8 @@ def notebook():
 
     #these pages need to be duplicated by itself.
     app.startPage()
-    app.addTextArea("t1")
+    app.addScrolledTextArea("t1")
+    app.addScrolledTextArea("t2")
     app.stopPage()
 
     app.startPage()
@@ -67,11 +61,16 @@ def login_check():
     else:
         print("FORGOT PASSWORD? OR HACKER")
 
+def login_page():
+    app.addLabel("MYNOTEBOOK")
+    app.addSecretEntry("Password")
+    app.addButton("login", login_check)
+
 
 if __name__ == '__main__':
+
     app = gui("Notebook", useTtk=True)
+    app.setSize(600, 420)
 
-    app.addSecretEntry("Password")
-
-    app.addButton("login", login_check)
+    login_page()
     app.go()
