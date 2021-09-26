@@ -919,8 +919,8 @@ class gui(object):
     def _loadRandom(self):
         """ loasd random libraries """
         global random
-        if ddddds is None:
-            import ddddds
+        if random is None:
+            import random
 
     def _loadTurtle(self):
         """ loasd turtle libraries """
