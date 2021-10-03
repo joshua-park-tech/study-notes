@@ -79,9 +79,10 @@ if __name__ == "__main__":
     # app.addButton("Calamity Ganon3", press)
     # app.addButton("Dark Beast Ganon3", press)
 
-    list_names = ["zelda-being-great-for-the-first-time-in-her-life.gif", "zelda-is-bad.gif", "zelda-is-scared.gif", "m.gif"]
+    list_names = ["zelda-being-great-for-the-first-time-in-her-life.gif", "zelda-is-bad.gif", "zelda-is-scared.gif",
+                  "m.gif"]
     ran_name = random.choice(list_names)
-    app.addImage( "abc",ran_name)
+    app.addImage("abc", ran_name)
 
     # app.addImage("stasis zelda", "zelda-being-great-for-the-first-time-in-her-life.gif")
     app.setImageSize("abc", 400, 500)
