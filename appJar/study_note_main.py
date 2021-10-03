@@ -62,8 +62,6 @@ def login_page():
 
     app.addButton("login", login_check)
 
-
-
 if __name__ == '__main__':
 
     #TODO handling data needed
@@ -74,15 +72,7 @@ if __name__ == '__main__':
 
     with gui("Updating Labels", useTtk=True) as app:
         app.setSize(600, 420)
+        list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
+        ran_name = random.choice(list_names)
+        app.addImage("abc", ran_name)
         login_page()
-
-    # app.go()
-    list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
-    ran_name = random.choice(list_names)
-    app.addImage("abc", ran_name)
-
-
-    #app.setImageSize("abc", 400, 500)
-
-    login_page()
-    app.go()
