@@ -1,3 +1,4 @@
+import random
 from appjar import gui
 import json
 from note import note_page
@@ -47,16 +48,21 @@ def notebook():
 
 def login_check():
     pw = app.getEntry("Password")
-    if pw == "1234":
+    ppw = app.getEntry("Username")
+    if pw == "1234" and ppw == "people":
         app.removeAllWidgets()
         notebook()
     else:
-        print("FORGOT PASSWORD? OR HACKER")
+        print("Forgot password or ID?")
 
 def login_page():
-    app.addLabel("MYNOTEBOOK")
+    app.addLabel("MY NOTEBOOK")
+    app.addEntry("Username")
     app.addSecretEntry("Password")
+
     app.addButton("login", login_check)
+
+
 
 if __name__ == '__main__':
 
@@ -71,3 +77,12 @@ if __name__ == '__main__':
         login_page()
 
     # app.go()
+    list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
+    ran_name = random.choice(list_names)
+    app.addImage("abc", ran_name)
+
+
+    #app.setImageSize("abc", 400, 500)
+
+    login_page()
+    app.go()
