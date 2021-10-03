@@ -1,39 +1,31 @@
 from appjar import gui
+import json
+from note import note_page
 
 
 def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
 
-def notebook():
+def notebook():                    
+
     app.setTtkTheme("clam")
     app.startNotebook("Notebook")
 
     app.startNote("Math")
 
     #start of the notebook pages
-    app.startPagedWindow("Math Page")
-
-    #these pages need to be duplicated by itself.
-    app.startPage()
-    app.addScrolledTextArea("t1")
-    app.addScrolledTextArea("t2")
-    app.stopPage()
-
-    app.startPage()
-    app.addLabel("p2", "Label 2")
-    app.stopPage()
-
-    app.startPage()
-    app.addLabel("p3", "Label 3")
-    app.stopPage()
-
-    app.startPage()
-    app.addLabel("p4", "Label 4")
-    app.stopPage()
-    app.stopPagedWindow()
-
-    app.stopNote()
+    with app.pagedWindow("Math Page"):
+        for pos in range(len(math_data)):
+            with app.page():
+                app.entry(str(pos)+"year", math_data[pos].year, label="year")
+                app.entry(str(pos)+"month", math_data[pos].month, label="month")
+                app.entry(str(pos)+"day", math_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "note")
+                app.setTextArea(str(pos) + "note", math_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "sidenote")
+                app.setTextArea(str(pos) + "sidenote", math_data[pos].sidenote, end=True, callFunction=True)
+                
 
     app.startNote("Science")
     app.addLabel("l2", "Science")
@@ -66,11 +58,16 @@ def login_page():
     app.addSecretEntry("Password")
     app.addButton("login", login_check)
 
-
 if __name__ == '__main__':
 
-    app = gui("Notebook", useTtk=True)
-    app.setSize(600, 420)
+    #TODO handling data needed
 
-    login_page()
-    app.go()
+    math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", None)
+    math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None)
+    math_data = [math1, math2]
+
+    with gui("Updating Labels", useTtk=True) as app:
+        app.setSize(600, 420)
+        login_page()
+
+    # app.go()
