@@ -18,6 +18,9 @@ def notebook():
     app.startNote("Math")
 
     #start of the notebook pages
+
+    
+    #TODO this is where you need to modify.
     with app.pagedWindow("Math Page"):
         for pos in range(len(math_data)):
             with app.page():
@@ -29,6 +32,8 @@ def notebook():
                 app.addTextArea(str(pos) + "sidenote")
                 app.setTextArea(str(pos) + "sidenote", math_data[pos].sidenote, end=True, callFunction=True)
                 app.addImage(str(pos) + "sidenote", math_data[pos].images, compound=None)
+
+    ### end of the modification.
 
     app.startNote("Science")
     app.addLabel("l2", "Science")
