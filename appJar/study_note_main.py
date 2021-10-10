@@ -1,6 +1,7 @@
 import random
 from appjar import gui
 from note import note_page
+import json
 
 def confirm():
     j = app.getScale("scale")
@@ -31,8 +32,6 @@ def notebook():
                 app.setTextArea(str(pos) + "note", math_data[pos].note, end=True, callFunction=True)
                 app.addTextArea(str(pos) + "sidenote")
                 app.setTextArea(str(pos) + "sidenote", math_data[pos].sidenote, end=True, callFunction=True)
-
-
 
     ### end of the modification.
     app.startNote("Science")
@@ -71,15 +70,22 @@ def login_page():
 
 if __name__ == '__main__':
 
-
     #TODO handling data needed
 
     #load data from the json file
+    # with open('note_pages.json', 'r') as openfile:
+        # Reading from json file
+        # json_object = json.load(openfile)
 
+        # Iterating through the json
+        # list
+        # for i in json_object['subject']:
+        #     print(i)
 
     math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
     math1.adding_notes_json()
     math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
+    math2.adding_notes_json()
     math_data = [math1, math2]
 
     with gui("Updating Labels", useTtk=True) as app:
