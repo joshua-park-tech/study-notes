@@ -14,6 +14,7 @@ def notebook():
     app.startNotebook("Notebook")
 
     app.startNote("Math")
+    app.setFg("blue")
 
     #start of the notebook pages
 
@@ -21,6 +22,7 @@ def notebook():
     with app.pagedWindow("Math Page"):
         for pos in range(len(math_data)):
             with app.page():
+
                 app.setStretch("both")
                 app.setSticky("nesw")
                 app.addImage(str(pos) + "sidenote", math_data[pos].images, compound=None)
@@ -37,7 +39,9 @@ def notebook():
     ### end of the modification.
     app.startNote("Science")
     app.addLabel("l2", "Science")
+    app.setFg("green")
     app.stopNote()
+
 
     app.startNote("English")
     app.addLabel("l3", "English")
