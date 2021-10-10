@@ -1,8 +1,6 @@
 import random
 from appjar import gui
-import json
 from note import note_page
-
 
 def confirm():
     j = app.getScale("scale")
@@ -19,11 +17,13 @@ def notebook():
 
     #start of the notebook pages
 
-    
     #TODO this is where you need to modify.
     with app.pagedWindow("Math Page"):
         for pos in range(len(math_data)):
             with app.page():
+                app.setStretch("both")
+                app.setSticky("nesw")
+                app.addImage(str(pos) + "sidenote", math_data[pos].images, compound=None)
                 app.entry(str(pos)+"year", math_data[pos].year, label="year")
                 app.entry(str(pos)+"month", math_data[pos].month, label="month")
                 app.entry(str(pos)+"day", math_data[pos].day, label="day")
@@ -31,10 +31,10 @@ def notebook():
                 app.setTextArea(str(pos) + "note", math_data[pos].note, end=True, callFunction=True)
                 app.addTextArea(str(pos) + "sidenote")
                 app.setTextArea(str(pos) + "sidenote", math_data[pos].sidenote, end=True, callFunction=True)
-                app.addImage(str(pos) + "sidenote", math_data[pos].images, compound=None)
+
+
 
     ### end of the modification.
-
     app.startNote("Science")
     app.addLabel("l2", "Science")
     app.stopNote()
@@ -67,19 +67,23 @@ def login_page():
     app.addLabel("MY NOTEBOOK")
     app.addEntry("Username")
     app.addSecretEntry("Password")
-
     app.addButton("login", login_check)
 
 if __name__ == '__main__':
 
+
     #TODO handling data needed
 
-    math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png")
-    math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None)
+    #load data from the json file
+
+
+    math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
+    math1.adding_notes_json()
+    math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
     math_data = [math1, math2]
 
     with gui("Updating Labels", useTtk=True) as app:
-        app.setSize(600, 420)
+        app.setSize(600, 800)
         list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
         ran_name = random.choice(list_names)
         app.addImage("abc", ran_name)
