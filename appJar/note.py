@@ -3,6 +3,7 @@ import os
 
 class note_page:
     def __init__(self, year, month, day, note, sidenote, images, subject):
+        self.id = id
         self.year = year
         self.month = month
         self.day = day
@@ -11,30 +12,12 @@ class note_page:
         self.images = images
         self.subject = subject
 
-    def adding_notes_json(self):
-        page = { "year":self.year,
-               "month":self.month,
-               "day":self.day,
-               "note":self.note,
-               "sidenote":self.sidenote,
-               "images":self.images,
-               "subject": self.subject,
-               }
+    def adding_notes_txt(self):
+        page = str(self.year) + ";.;" + str(self.month) + ";.;" + str(self.day) + ";.;" + str(self.note) + ";.;" + str(self.sidenote) + ";.;" + str(self.images) + ";.;" + str(self.subject)
 
-        DATA_FILENAME = "note_pages.json"
-        if os.stat("note_pages.json").st_size == 0:
-            json_object = json.dumps(page)
-            # file_name = str(self.subject) + "_note.json"
-            with open("note_pages.json","w") as outfile:
-                outfile.write(json_object)
-            # with open(DATA_FILENAME, mode='w', encoding='utf-8') as f:
-            #     json.dump([], f)
-        else:
-            pass
-            # with open(DATA_FILENAME, mode='r', encoding='utf-8') as feedsjson:
-            #     feeds = json.load(feedsjson)
-            #
-            # with open(DATA_FILENAME, mode='w', encoding='utf-8') as feedsjson:
-            #     entry = page
-            #     feeds.append(entry)
-            #     json.dump(feeds, feedsjson)
+
+        file_object = open('note_page.txt', 'a')
+        file_object.write('\n')
+        file_object.write(str(page) + '\n')
+        file_object.close()
+

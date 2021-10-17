@@ -1,4 +1,5 @@
 import random
+import time
 from appjar import gui
 from note import note_page
 import json
@@ -7,7 +8,34 @@ def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
 
+def new_page_math():
+    pass
+
 def notebook():
+
+    math_data = []
+    science_data = []
+    # reading from the txt file
+    lines = []
+    with open('note_page.txt') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        conv = line.split(";.;")
+
+        if conv[0] == "\n":
+            pass
+        else:
+
+            print(conv)
+            temp_page = note_page(conv[0], conv[1], conv[2], conv[3], conv[4], conv[5], conv[6])
+
+            if conv[6] == "math\n":
+                math_data.append(temp_page)
+
+            if conv[6] == "science\n":
+                science_data.append(temp_page)
+
     # app.setStretch("both")
     # app.setSticky("nesw")
 
@@ -20,27 +48,40 @@ def notebook():
     #start of the notebook pages
 
     #TODO this is where you need to modify.
-    with app.pagedWindow("Math Page"):
+    with app.pagedWindow("Math"):
         for pos in range(len(math_data)):
             with app.page():
 
                 app.setStretch("both")
                 app.setSticky("nesw")
-                app.addImage(str(pos) + "sidenote", math_data[pos].images, compound=None)
-                app.entry(str(pos)+"year", math_data[pos].year, label="year")
-                app.entry(str(pos)+"month", math_data[pos].month, label="month")
-                app.entry(str(pos)+"day", math_data[pos].day, label="day")
-                app.addTextArea(str(pos) + "note")
-                app.setTextArea(str(pos) + "note", math_data[pos].note, end=True, callFunction=True)
-                app.addTextArea(str(pos) + "sidenote")
-                app.setTextArea(str(pos) + "sidenote", math_data[pos].sidenote, end=True, callFunction=True)
+                app.addImage(str(pos) + "math_sidenote", math_data[pos].images, compound=None)
+                app.entry(str(pos)+"math_year", math_data[pos].year, label="year")
+                app.entry(str(pos)+"math_month", math_data[pos].month, label="month")
+                app.entry(str(pos)+"math_day", math_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "math_note")
+                app.setTextArea(str(pos) + "math_note", math_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "math_sidenote")
+                app.setTextArea(str(pos) + "math_sidenote", math_data[pos].sidenote, end=True, callFunction=True)
+                app.addButton(str(pos) + "create page", new_page_math)
 
-    ### end of the modification.
+
     app.startNote("Science")
-    app.addLabel("l2", "Science")
-    app.setFg("green")
-    app.stopNote()
+    app.setFg("blue")
 
+    with app.pagedWindow("Science"):
+        for pos in range(len(science_data)):
+            with app.page():
+
+                app.setStretch("both")
+                app.setSticky("nesw")
+                app.addImage(str(pos) + "science_sidenote", science_data[pos].images, compound=None)
+                app.entry(str(pos)+"science_year", science_data[pos].year, label="year")
+                app.entry(str(pos)+"science_month", science_data[pos].month, label="month")
+                app.entry(str(pos)+"science_day", science_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "science_note")
+                app.setTextArea(str(pos) + "science_note", science_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "science_sidenote")
+                app.setTextArea(str(pos) + "science_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
 
     app.startNote("English")
     app.addLabel("l3", "English")
@@ -85,12 +126,16 @@ if __name__ == '__main__':
         # list
         # for i in json_object['subject']:
         #     print(i)
+    # seconds = time.time()
+    # math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
+    # math1.adding_notes_txt()
+    # math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
+    # math2.adding_notes_txt()
 
-    math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
-    math1.adding_notes_json()
-    math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
-    math2.adding_notes_json()
-    math_data = [math1, math2]
+    #these are the data container
+
+
+
 
     with gui("Updating Labels", useTtk=True) as app:
         app.setSize(600, 800)
