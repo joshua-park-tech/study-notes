@@ -108,17 +108,59 @@ def notebook():
                 app.setTextArea(str(pos) + "science_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
 
     app.startNote("English")
-    app.addLabel("l3", "English")
-    app.stopNote()
+    app.setFg("blue")
+
+    with app.pagedWindow("English"):
+        for pos in range(len(science_data)):
+            with app.page():
+
+                app.setStretch("both")
+                app.setSticky("nesw")
+                app.addImage(str(pos) + "English_sidenote", science_data[pos].images, compound=None)
+                app.entry(str(pos)+"English_year", science_data[pos].year, label="year")
+                app.entry(str(pos)+"English_month", science_data[pos].month, label="month")
+                app.entry(str(pos)+"English_day", science_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "English_note")
+                app.setTextArea(str(pos) + "English_note", science_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "English_sidenote")
+                app.setTextArea(str(pos) + "English_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
 
     app.startNote("Geography")
-    app.addLabel("l4", "Geography")
-    app.stopNote()
+    app.setFg("blue")
+
+    with app.pagedWindow("Geography"):
+        for pos in range(len(science_data)):
+            with app.page():
+
+                app.setStretch("both")
+                app.setSticky("nesw")
+                app.addImage(str(pos) + "Geography_sidenote", science_data[pos].images, compound=None)
+                app.entry(str(pos)+"Geography_year", science_data[pos].year, label="year")
+                app.entry(str(pos)+"Geography_month", science_data[pos].month, label="month")
+                app.entry(str(pos)+"Geography_day", science_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "Geography_note")
+                app.setTextArea(str(pos) + "Geography_note", science_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "Geography_sidenote")
+                app.setTextArea(str(pos) + "Geography_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
 
     app.startNote("History")
-    app.addLabel("l5", "History")
-    app.stopNote()
+    app.setFg("blue")
 
+
+    with app.pagedWindow("History"):
+        for pos in range(len(science_data)):
+            with app.page():
+
+                app.setStretch("both")
+                app.setSticky("nesw")
+                app.addImage(str(pos) + "History_sidenote", science_data[pos].images, compound=None)
+                app.entry(str(pos)+"History_year", science_data[pos].year, label="year")
+                app.entry(str(pos)+"History_month", science_data[pos].month, label="month")
+                app.entry(str(pos)+"History_day", science_data[pos].day, label="day")
+                app.addTextArea(str(pos) + "History_note")
+                app.setTextArea(str(pos) + "History_note", science_data[pos].note, end=True, callFunction=True)
+                app.addTextArea(str(pos) + "History_sidenote")
+                app.setTextArea(str(pos) + "History_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
     app.stopNotebook()
 
 def login_check():
