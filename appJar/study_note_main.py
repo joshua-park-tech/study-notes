@@ -9,7 +9,31 @@ def confirm():
     app.setTransparency(j)
 
 def new_page_math():
-    pass
+    #TODO handling data needed
+
+    #load data from the json file
+    # with open('note_pages.json', 'r') as openfile:
+        # Reading from json file
+        # json_object = json.load(openfile)
+
+        # Iterating through the json
+        # list
+        # for i in json_object['subject']:
+        #     print(i)
+    # seconds = time.time()
+    # math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
+    # math1.adding_notes_txt()
+    # math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
+    # math2.adding_notes_txt()
+
+    #these are the data container
+
+    new_page = note_page("Year", "Month", "Date", "Your Description here", "Your Side Note here", "noimg.png", "math")
+    new_page.adding_notes_txt()
+
+    app.removeAllWidgets()
+    notebook()
+
 
 def notebook():
 
@@ -114,28 +138,6 @@ def login_page():
     app.addButton("login", login_check)
 
 if __name__ == '__main__':
-
-    #TODO handling data needed
-
-    #load data from the json file
-    # with open('note_pages.json', 'r') as openfile:
-        # Reading from json file
-        # json_object = json.load(openfile)
-
-        # Iterating through the json
-        # list
-        # for i in json_object['subject']:
-        #     print(i)
-    # seconds = time.time()
-    # math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
-    # math1.adding_notes_txt()
-    # math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
-    # math2.adding_notes_txt()
-
-    #these are the data container
-
-
-
 
     with gui("Updating Labels", useTtk=True) as app:
         app.setSize(600, 800)

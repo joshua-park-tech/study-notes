@@ -4,3 +4,7 @@
 2021;.;10;.;17;.;heyahowsgoin;.;slodjfnsalodjnfaslkjdnflskjndf;.;m.gif;.;math
 
 2021;.;10;.;17;.;this is science;.;slodjfnsalodjnfaslkjdnflskjndf;.;noimg.png;.;science
+
+Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
