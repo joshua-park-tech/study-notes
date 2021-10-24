@@ -28,12 +28,11 @@ def new_page_math():
 
     #these are the data container
 
-    new_page = note_page("Year", "Month", "Date", "Your Description here", "Your Side Note here", "noimg.png", "math")
+    new_page = note_page(str(time.time()), "Year", "Month", "Date", "Your Description here", "Your Side Note here", "noimg.png", "math")
     new_page.adding_notes_txt()
 
     app.removeAllWidgets()
     notebook()
-
 
 def notebook():
 
@@ -50,16 +49,14 @@ def notebook():
         if conv[0] == "\n":
             pass
         else:
-
             print(conv)
-            temp_page = note_page(conv[0], conv[1], conv[2], conv[3], conv[4], conv[5], conv[6])
+            temp_page = note_page(conv[0], conv[1], conv[2], conv[3], conv[4], conv[5], conv[6], conv[7])
 
-            if conv[6] == "math\n":
+            if conv[7] == "math\n":
                 math_data.append(temp_page)
 
-            if conv[6] == "science\n":
+            if conv[7] == "science\n":
                 science_data.append(temp_page)
-
     # app.setStretch("both")
     # app.setSticky("nesw")
 
@@ -70,8 +67,6 @@ def notebook():
     app.setFg("blue")
 
     #start of the notebook pages
-
-    #TODO this is where you need to modify.
     with app.pagedWindow("Math"):
         for pos in range(len(math_data)):
             with app.page():
@@ -87,6 +82,7 @@ def notebook():
                 app.addTextArea(str(pos) + "math_sidenote")
                 app.setTextArea(str(pos) + "math_sidenote", math_data[pos].sidenote, end=True, callFunction=True)
                 app.addButton(str(pos) + "create page", new_page_math)
+                app.addButton(str(pos) + "save page", save_notebook)
 
 
     app.startNote("Science")
@@ -162,6 +158,9 @@ def notebook():
                 app.addTextArea(str(pos) + "History_sidenote")
                 app.setTextArea(str(pos) + "History_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
     app.stopNotebook()
+
+def save_notebook_math():
+    app.getEntry(str(pos) + "math_note")
 
 def login_check():
 
