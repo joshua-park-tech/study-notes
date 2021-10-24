@@ -4,6 +4,7 @@ from appjar import gui
 from note import note_page
 import json
 
+
 def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
