@@ -34,6 +34,8 @@ def new_page_math():
     app.removeAllWidgets()
     notebook()
 
+def change_image():
+    print("change image")
 
 def notebook():
 
@@ -67,18 +69,20 @@ def notebook():
     app.startNotebook("Notebook")
 
     app.startNote("Math")
-    app.setFg("blue")
+
+    app.setFg("green")
 
     #start of the notebook pages
 
     #TODO this is where you need to modify.
     with app.pagedWindow("Math"):
+        app.setBg("blue")
         for pos in range(len(math_data)):
             with app.page():
 
                 app.setStretch("both")
                 app.setSticky("nesw")
-                app.addImage(str(pos) + "math_sidenote", math_data[pos].images, compound=None)
+                app.addImageButton(str(pos) + "math_sidenote",change_image, math_data[pos].images)
                 app.entry(str(pos)+"math_year", math_data[pos].year, label="year")
                 app.entry(str(pos)+"math_month", math_data[pos].month, label="month")
                 app.entry(str(pos)+"math_day", math_data[pos].day, label="day")
@@ -90,7 +94,7 @@ def notebook():
 
 
     app.startNote("Science")
-    app.setFg("blue")
+    app.setBg("red")
 
     with app.pagedWindow("Science"):
         for pos in range(len(science_data)):

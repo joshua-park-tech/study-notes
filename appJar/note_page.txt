@@ -8,3 +8,5 @@
 Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
 
 Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
