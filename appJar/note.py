@@ -21,10 +21,5 @@ class note_page:
         file_object.write(str(page) + '\n')
         file_object.close()
 
-    def saving_notes(self,added_note, added_sidenote, added_images):
-        self.note = added_note
-        self.sidenote = added_sidenote
-        self.image = added_images
-
 
 
