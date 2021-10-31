@@ -6,19 +6,3 @@
 3;.;2021;.;10;.;17;.;this is science;.;slodjfnsalodjnfaslkjdnflskjndf;.;noimg.png;.;science
 
 4;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-<<<<<<< HEAD
-Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-=======
-5;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-1635046288.8512874;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-1635048921.4273334;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-1635048932.5603473;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
-
-1635048948.4903655;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
->>>>>>> b79fe8123292175dbb64f9537df582c7bc989380

@@ -35,12 +35,13 @@ def new_page_math():
     app.removeAllWidgets()
     notebook()
 
-<<<<<<< HEAD
 def change_image():
     print("change image")
 
-=======
->>>>>>> b79fe8123292175dbb64f9537df582c7bc989380
+
+def save_notebook():
+    pass
+
 def notebook():
 
     math_data = []
@@ -168,8 +169,8 @@ def notebook():
                 app.setTextArea(str(pos) + "History_sidenote", science_data[pos].sidenote, end=True, callFunction=True)
     app.stopNotebook()
 
-def save_notebook_math():
-    app.getEntry(str(pos) + "math_note")
+# def save_notebook_math():
+#     app.getEntry(str(pos) + "math_note")
 
 def login_check():
 
