@@ -35,12 +35,11 @@ def new_page_math():
     app.removeAllWidgets()
     notebook()
 
-<<<<<<< HEAD
+
 def change_image():
     print("change image")
 
-=======
->>>>>>> b79fe8123292175dbb64f9537df582c7bc989380
+
 def notebook():
 
     math_data = []
