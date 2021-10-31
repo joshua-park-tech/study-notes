@@ -191,7 +191,7 @@ def login_page():
 if __name__ == '__main__':
 
     with gui("Updating Labels", useTtk=True) as app:
-        app.setSize(600, 800)
+        app.setSize(800, 500)
         list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
         ran_name = random.choice(list_names)
         app.addImage("abc", ran_name)
