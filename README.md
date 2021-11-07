@@ -11,11 +11,21 @@ This application was created to manage our notes for example, the ones that were
 ## Features
 
 ![image](https://github.com/joshua-park-tech/study-notes/blob/main/appJar/github_related/1.png)
+
 The login page is to greet the person and the notebook is inside. 
 
 ![image](https://github.com/joshua-park-tech/study-notes/blob/main/appJar/github_related/Screenshot%202021-11-07%20153035.png)
+
 You can put in images, write things and share your work with others with a fancy username.
-The notes are located on the top, where you can chose between math, science, geography... so on
+The notes are located on the top, where you can chose between math, science, geography and more.
+
+On the bottom of the screen, we have NEXT and PREVIOUS button to go through different pages.
+Create page will create a next page, but due to the limitation of APPJAR, we need to refresh the entire page, 
+hence takes around 5~6 second depends on the processor of the computer. 
+
+
+## Save files
+The save file of the system is created with TXT. Below is the structure of our TXT savefile.
 
 
 ## Problems
