@@ -6,7 +6,6 @@ import json
 
 current_page = "stuff"
 
-
 def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
@@ -70,7 +69,7 @@ def notebook():
     app.setTtkTheme("clam")
     app.startNotebook("Notebook")
     app.startNote("Math")
-    app.setFg("green")
+
 
     def save_notebook():
         print(math_data[pos].id)
@@ -95,7 +94,7 @@ def notebook():
 
     # start of the notebook pages
     with app.pagedWindow("Math"):
-        app.setBg("blue")
+
         for pos in range(len(math_data)):
             with app.page():
 
@@ -117,7 +116,6 @@ def notebook():
 
 
     app.startNote("Science")
-    app.setBg("red")
 
     with app.pagedWindow("Science"):
         for pos in range(len(science_data)):
@@ -209,7 +207,7 @@ def login_page():
 
 if __name__ == '__main__':
     with gui("Updating Labels", useTtk=True, useSettings=True) as app:
-        app.setSize(800, 500)
+        app.setSize(300, 800)
         list_names = ["thiiiiiiiiiiiiiiiiiiiiiiiis is a gif.gif"]
         ran_name = random.choice(list_names)
         app.addImage("abc", ran_name)
