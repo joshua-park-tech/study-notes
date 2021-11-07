@@ -27,6 +27,18 @@ hence takes around 5~6 second depends on the processor of the computer.
 ## Save files
 The save file of the system is created with TXT. Below is the structure of our TXT savefile.
 
+'''
+1635650466.444111;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+1635651265.334358;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+1635651379.620838;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+1635655915.3472261;.;Year;.;Month;.;Date;.;Your Description here;.;Your Side Note here;.;noimg.png;.;math
+
+'''
+The save files will save the current time in a second as a ID, save the year, month, date, description, sidenote, and image. 
+
 
 ## Problems
 Due to the architecture of Appjar, the save button currently doesn't work. 
