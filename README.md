@@ -6,7 +6,7 @@ We used appjar as our library to make this study notes.
 ## Features
 You can put in images, write things and share your work with others with a fancy username.
 
-![image](C:\Users\faith\OneDrive\Documents\GitHub\study-notes\appJar\github_related\1.png)
+![image](https://github.com/joshua-park-tech/study-notes/blob/main/appJar/github_related/1.png)
 
 ![image](C:\Users\faith\OneDrive\Documents\GitHub\study-notes\appJar\github_related\Screenshot 2021-11-07 153035.png)
 
