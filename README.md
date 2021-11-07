@@ -8,7 +8,7 @@ You can put in images, write things and share your work with others with a fancy
 
 ![image](C:\Users\faith\OneDrive\Documents\GitHub\study-notes\appJar\github_related\1.png)
 
-![](C:\Users\faith\OneDrive\Documents\GitHub\study-notes\appJar\github_related\Screenshot 2021-11-07 153035.png)
+![image](C:\Users\faith\OneDrive\Documents\GitHub\study-notes\appJar\github_related\Screenshot 2021-11-07 153035.png)
 
 The login page is to greet the person and the notebook is inside. 
 
