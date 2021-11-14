@@ -6,7 +6,7 @@ To save the information of the images, dates and years that was created and also
 
 Currently, you can write and edit the textboxes on each page and if you run out of pages, you can create new ones. 
 This application was created to manage our notes for example, the ones that were not able to create. 
-
+ 
 
 ## Features
 You can put in images, write things and share your work with others with a fancy username.
