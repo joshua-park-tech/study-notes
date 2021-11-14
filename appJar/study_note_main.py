@@ -5,31 +5,13 @@ from note import note_page
 import json
 
 current_page = "stuff"
+global pos
 
 def confirm():
     j = app.getScale("scale")
     app.setTransparency(j)
 
 def new_page_math():
-    # TODO handling data needed
-
-    # load data from the json file
-    # with open('note_pages.json', 'r') as openfile:
-    # Reading from json file
-    # json_object = json.load(openfile)
-
-    # Iterating through the json
-    # list
-    # for i in json_object['subject']:
-    #     print(i)
-    # seconds = time.time()
-    # math1 = note_page(2021,10,3,"the quadratic formula is very important", "check the book no1", "math/qd.png", "math")
-    # math1.adding_notes_txt()
-    # math2 = note_page(2021, 10, 2, "ayuayayayayay", "yeert", None, "math")
-    # math2.adding_notes_txt()
-
-    # these are the data container
-
     new_page = note_page(str(time.time()), "Year", "Month", "Date", "Your Description here", "Your Side Note here",
                          "noimg.png", "math")
     new_page.adding_notes_txt()
@@ -68,8 +50,8 @@ def notebook():
 
     app.setTtkTheme("clam")
     app.startNotebook("Notebook")
-    app.startNote("Math")
 
+    app.startNote("Math")
 
     def save_notebook():
         print(math_data[pos].id)
