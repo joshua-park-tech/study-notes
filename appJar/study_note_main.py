@@ -5,7 +5,7 @@ from note import note_page
 import json
 
 current_page = "stuff"
-pos_math = 0
+pos_math = -1
 pos_science = 0
 pos_history = 0
 
@@ -51,8 +51,13 @@ def notebook(btn):
     global pos_math
     global pos_history
     global pos_science
-    if btn == "Next": pos_math += 1
-    elif btn == "Previous": pos_math -= 1
+
+    if btn == "Next":
+        print(pos_math)
+        pos_math += 1
+
+    elif btn == "Previous":
+        pos_math -= 1
 
     math_data = []
     science_data = []
@@ -75,36 +80,26 @@ def notebook(btn):
 
             if conv[7] == "science\n":
                 science_data.append(temp_page)
-    # app.setStretch("both")
-    # app.setSticky("nesw")
-
-    app.setTtkTheme("clam")
-    app.startNotebook("Notebook")
-
-    app.startNote("Math")
-
-    # start of the notebook pages
-
-    # for pos_math in range(len(math_data)):
-        # with app.page():
 
     if pos_math == 0:
-        app.disableButton("Previous")
+        # app.disableButton("Previous")
+        pass
     elif pos_math == len(math_data) - 1:
         app.disableButton("Next")
     else:
         app.enableButton("Previous")
         app.enableButton("Next")
 
+
     app.setStretch("both")
     app.setSticky("nesw")
-    app.addImageButton("math_sidenote", change_image, math_data[pos_math].images)
-    app.entry("math_year", math_data[pos_math].year)
-    app.entry("math_month", math_data[pos_math].month)
-    app.entry("math_day", math_data[pos_math].day)
-    app.addTextArea("math_note")
-    # app.setTextArea("math_note", math_data[pos_math].note, end=True, callFunction=True)
-    app.addTextArea("math_sidenote")
+    # app.addImageButton(str(pos_math) + "math_sidenote", change_image, math_data[pos_math].images)
+    # app.entry(str(pos_math) + "math_year", math_data[pos_math].year)
+    # app.entry(str(pos_math) + "math_month", math_data[pos_math].month)
+    # app.entry(str(pos_math) + "math_day", math_data[pos_math].day)
+    app.clearEntry("math_note", callFunction=False)
+    app.clearEntry("math_sidenote", callFunction=False)
+    app.setTextArea("math_note", math_data[pos_math].note, end=True, callFunction=True)
     app.setTextArea("math_sidenote", math_data[pos_math].sidenote, end=True, callFunction=True)
     # app.addButton("create page", new_page_math)
     # app.addButton("save page", save_notebook)
@@ -188,19 +183,7 @@ def login_check():
     ppw = app.getEntry("Username")
     if pw == "1234" and ppw == "people":
         app.removeAllWidgets()
-
-        app.buttons(["Previous", "Next"], notebook)
-        app.addImageButton(str(pos_math) + "math_sidenote", change_image, "noimg.png")
-        app.entry("math_year", label=True)
-        app.entry("math_month", label=True)
-        app.entry("math_day", label=True)
-        app.addTextArea("math_note")
-        # app.setTextArea("math_note", end=True, callFunction=True)
-        app.addTextArea("math_sidenote")
-        # app.setTextArea("math_sidenote", end=True, callFunction=True)
-        app.addButton("create page", new_page_math)
-        app.addButton("save page", save_notebook)
-
+        next_prev_button()
         notebook("Next")
     else:
         print("Forgot password or ID?")
@@ -211,6 +194,26 @@ def login_page():
     app.addEntry("Username")
     app.addSecretEntry("Password")
     app.addButton("login", login_check)
+
+def next_prev_button():
+    app.removeAllWidgets()
+    # app.addImageButton("math_sidenote")
+    app.entry("math_year")
+    app.entry("math_month")
+    app.entry("math_day")
+    app.addTextArea("math_note")
+    # app.setTextArea("math_note")
+    app.addTextArea("math_sidenote")
+    # app.setTextArea("math_sidenote")
+    app.buttons(["Previous", "Next"], notebook)
+    app.buttons(["create page", "save page"], save_new)
+
+def save_new(btn):
+    if btn == "save page":
+        save_notebook()
+
+    elif btn == "create page":
+        new_page_math()
 
 
 if __name__ == '__main__':
