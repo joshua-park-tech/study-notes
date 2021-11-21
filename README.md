@@ -51,3 +51,4 @@ Also, the packaging didn't work on MacOS due to appjar but it does operate. Howe
 ## Update
 Appjar's pages function does not support a specified page function so Appjar cannot distinguish between different pages. To solve that, we created a next and previous 
 buttons but bringing widgets such as text area, images and small text areas are not available due to an architectual problem within Appjar. 
+We'll probably just work with Kivvy and SQL to properly support save and load in a safe manner. Other than that, it is impossible. 
