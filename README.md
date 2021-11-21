@@ -46,3 +46,8 @@ Due to the architecture of Appjar, the save button currently doesn't work.
 - When we try to get the TXT file, appjar just loops it
 
 Also, the packaging didn't work on MacOS due to appjar but it does operate. However, it does operate on Windows and Linux.
+
+
+## Update
+Appjar's pages function does not support a specified page function so Appjar cannot distinguish between different pages. To solve that, we created a next and previous 
+buttons but bringing widgets such as text area, images and small text areas are not available due to an architectual problem within Appjar. 
